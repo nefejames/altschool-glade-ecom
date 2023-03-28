@@ -1,9 +1,11 @@
+import { FC } from "react";
 import { Badge, Flex, Image, Text, Stack } from "@chakra-ui/react";
 import AddToCartButton from "./cart/AddToCartButton";
 import CartCounter from "./cart/CartCounter";
 import DiscountPrice from "@/utils/discountPrice";
+import { ProductProps } from "@/types/index";
 
-export default function ProductDetail({ product }) {
+const ProductDetail: FC<ProductProps> = ({ product }) => {
   return (
     <>
       <Stack direction={["column", "row"]}>
@@ -38,4 +40,6 @@ export default function ProductDetail({ product }) {
       </Stack>
     </>
   );
-}
+};
+
+export default ProductDetail;

@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { Flex, IconButton, Input } from "@chakra-ui/react";
 import { FaSearch } from "react-icons/fa";
 
-export default function SearchBar() {
+const SearchBar: FC = () => {
   return (
     <Flex
       align="center"
@@ -27,4 +28,6 @@ export default function SearchBar() {
       />
     </Flex>
   );
-}
+};
+
+export default SearchBar;

@@ -1,8 +1,10 @@
+import { FC } from "react";
 import { Badge, Box, Flex, Image, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import DiscountPrice from "@/utils/discountPrice";
+import { ProductProps } from "@/types/index";
 
-export default function ProductCard({ product }) {
+const ProductCard: FC<ProductProps> = ({ product }) => {
   return (
     <Link href={`product/${product.id}`}>
       <Box position="relative" boxShadow="lg">
@@ -16,7 +18,7 @@ export default function ProductCard({ product }) {
           <Flex gap={4} alignItems="center">
             <Text fontSize="16px" fontWeight="600">
               ${DiscountPrice(product.price, 20)}
-            </Text>
+            </Text>{" "}
             <Badge colorScheme="gray" textDecoration="line-through">
               ${product.price}
             </Badge>
@@ -26,4 +28,6 @@ export default function ProductCard({ product }) {
       </Box>
     </Link>
   );
-}
+};
+
+export default ProductCard;

@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { Flex, Link } from "@chakra-ui/react";
 import CartPopoverDetails from "@/components/cart";
 
-export default function Navbar() {
+const Navbar: FC = () => {
   return (
     <nav>
       <Flex
@@ -12,11 +13,9 @@ export default function Navbar() {
         py="2.5"
         mb="10"
       >
-        <Flex align="center" minW="15%" fontSize="18px" color="brand.900">
-          <Link href="/" fontWeight={600} color="black" ms="2" title="logo">
-            GladeEcommerce
-          </Link>
-        </Flex>
+        <Link href="/" fontWeight={600} color="black" ms="2" title="logo">
+          GladeEcommerce
+        </Link>
 
         <Flex
           align="center"
@@ -30,4 +29,6 @@ export default function Navbar() {
       </Flex>
     </nav>
   );
-}
+};
+
+export default Navbar;

@@ -7,11 +7,10 @@ import {
   FilteredProductsContextProvider,
 } from "@/context/index";
 import Layout from "@/layout/index";
-import { Theme } from "@/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={Theme}>
+    <ChakraProvider>
       <CartCountContextProvider>
         <AddToCartContextProvider>
           <CartItemContextProvider>

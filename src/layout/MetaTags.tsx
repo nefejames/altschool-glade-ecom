@@ -1,6 +1,7 @@
+import { FC } from "react";
 import Head from "next/head";
 
-export default function MetaTags() {
+const MetaTags: FC = () => {
   return (
     <Head>
       <title>Glade App</title>
@@ -9,4 +10,6 @@ export default function MetaTags() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
-}
+};
+
+export default MetaTags;

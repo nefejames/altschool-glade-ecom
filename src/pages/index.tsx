@@ -1,8 +1,25 @@
+import { FC } from "react";
 import { SimpleGrid } from "@chakra-ui/react";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 
-export default function Home({ data }) {
+export type ProductProps = {
+  product: {
+    category: string;
+    description: string;
+    id: number;
+    image: string;
+    price: number;
+    rating: { count: number; rate: number };
+    title: string;
+  };
+};
+
+type ProductArrayProps = {
+  data: ProductProps[];
+};
+
+const Home: FC<ProductArrayProps> = ({ data }) => {
   return (
     <>
       <main>
@@ -15,7 +32,7 @@ export default function Home({ data }) {
       </main>
     </>
   );
-}
+};
 
 export async function getServerSideProps() {
   const res = await fetch("https://fakestoreapi.com/products?limit=4");
@@ -25,3 +42,5 @@ export async function getServerSideProps() {
     props: { data },
   };
 }
+
+export default Home;
